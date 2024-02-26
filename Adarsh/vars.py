@@ -29,15 +29,15 @@ class Var(object):
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', 'BIND_ADRESS:PORT')) if not ON_HEROKU or getenv('FQDN', '') else APP_NAME+'.herokuapp.com'
+    FQDN = str(getenv('FQDN', '212.224.88.31:8080')) if not ON_HEROKU or getenv('FQDN', '212.224.88.31:8080') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
     else:
         URL = "http://{}/".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://mongodbuser:mogodbpass@cluster0.appjt7j.mongodb.net/'))
-    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'Rk_botz'))
+    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'swegos'))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split()))      
-    SHORTLINK_URL = getenv('SHORTLINK_URL', 'onepagelink.in')
-    SHORTLINK_API = getenv('SHORTLINK_API', 'c47e1c4469c0a66e74af7153cb8f4d3b304d010')
-    TUTORIAL_URL = getenv('TUTORIAL_URL', 'https://t.me/rk_back_up/18')
+    SHORTLINK_URL = getenv('SHORTLINK_URL', 'none')
+    SHORTLINK_API = getenv('SHORTLINK_API',)
+    TUTORIAL_URL = getenv('TUTORIAL_URL', 'https://t.me/swegos')
